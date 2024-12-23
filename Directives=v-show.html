@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+     <div id="app">
+        <p v-show="changeuser()"> 
+            You are Young 
+        </p>
+        <p v-show="!changeuser()"> 
+            You are Old 
+        </p>
+
+
+
+     </div>
+
+
+     <script>
+           const app = Vue.createApp
+             ({
+                data(){
+                    return {
+                     age: 20,
+                     allowage: 30
+                    };
+                     
+                },
+
+                methods:{
+                    changeuser(){
+                        return (this.age >= this.allowage) ? true : false;
+                    }
+                }
+             
+            });
+           
+      app.mount('#app');
+      //এটি Vue অ্যাপ্লিকেশনটিকে DOM-এ id="app" থাকা ডিভের 
+      // সাথে সংযুক্ত করে, যাতে Vue-এর ডেটা এবং মেথডগুলো 
+      // HTML ট্যাগে কাজ করতে পারে।
+ 
+     </script>
+
+
+    
+</body>
+</html>
