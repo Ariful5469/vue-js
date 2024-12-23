@@ -7,17 +7,34 @@
     <title>Vue Test</title>
 </head>
 <body>
-    <div id="app">{{ title }}
-    
+    <div id="app">
+        <p>{{ title }}</p>
+        <p>{{ istrue }}</p>
+        <p>{{ cars[0] }}</p>
+        <p>{{ robot.name }}</p>
+        <p>{{ xyz() }}</p>
+   
+   
     </div>
     <script>
-        new Vue({
-            el:"#app",
-            data:{
-                title:"Arif"
+        const app = Vue.createApp({
+            data() {
+                return {
+                    title: "Arif",
+                    istrue:true,
+                    cars:['car-y','car-z'],
+                    robot:{
+                           name:"robot-x"
+                    },
+                    xyz:()=>{
+                        return "hello world";
+                    }
 
+                };
             }
-        })
+        });
+
+        app.mount("#app");
     </script>
 </body>
 </html>
