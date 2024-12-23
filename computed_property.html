@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <button v-on:click="a++"> Add A </button>
+        <button v-on:click="b++">Add B </button>
+
+        <p>A={{ a }}</p>
+        <p>B={{ b }}</p>
+
+
+        <p>Salary+A={{ addtoa }}</p>
+        <p>Salary+B={{ addtob }}</p>
+    </div>
+
+    <script>
+       const app = Vue.createApp({
+           data(){
+
+            return{
+               a:0,
+               b:0,
+               salary:10
+
+            };
+
+
+           },
+
+
+          
+
+           computed:{
+             addtoa(){
+
+                   return this.a + this.salary;
+
+             },
+
+             addtob(){
+
+                  return this.b + this.salary;
+
+             }
+
+
+
+           }
+
+
+
+       });
+       app.mount('#app');
+    </script>
+    
+</body>
+</html>
