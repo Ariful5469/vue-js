@@ -8,7 +8,7 @@
 </head>
 <body>
      <div id="app">
-        <p v-if="age >= allowage"> 
+        <p v-if="changeuser()"> 
             You are Young 
         </p>
         <p v-else> 
@@ -29,6 +29,12 @@
                      allowage: 30
                     };
                      
+                },
+
+                methods:{
+                    changeuser(){
+                        return (this.age <= this.allowage) ? true : false;
+                    }
                 }
              
             });
