@@ -11,6 +11,13 @@
         <!--USING V-BIND AFTER ATTRIBUTE-->
         
         <img v-bind:src="src" v-bind:alt="alt">
+        <hr>
+        <a v-bind:href="link">click me</a>
+        <hr>
+
+       
+
+
    
    
     </div>
@@ -19,7 +26,9 @@
             data() {
                 return {
                     src: "https://picsum.photos/seed/picsum/200/300",
-                    alt: "this is sky picture"
+                    alt: "this is sky picture",
+                    link: "http://www.google.com",
+                    mytext:"Hello,Arif"
                 };
             }
         });
